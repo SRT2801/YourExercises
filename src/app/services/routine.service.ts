@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Routine } from '../models/routine';
 import { Exercise } from '../models/exercise';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class RoutineService {
   private routines: Routine[] = [];
+  private categories = ['Push Day', 'Pull Day', 'Legs Day', 'Hipertrofia', 'Fuerza', 'Resistencia'];
 
   constructor() {
     // Inicializamos con las rutinas del plan PPL (Push, Pull, Legs)
@@ -24,6 +26,9 @@ export class RoutineService {
           { id: 17, name: 'Shrugs', sets: 3, reps: 8, weight: 80 },
           { id: 21, name: 'Tricep Pushdown', sets: 3, reps: 10, weight: 35 },
         ],
+        category: 'Push',
+        type: 'Fuerza',
+        isUserCreated: false
       },
       {
         id: 2,
@@ -37,6 +42,9 @@ export class RoutineService {
           { id: 15, name: 'Lateral Raises', sets: 3, reps: 15, weight: 10 },
           { id: 20, name: 'Tricep Dips', sets: 3, reps: 12, weight: 0 },
         ],
+        category: 'Push',
+        type: 'Hipertrofia',
+        isUserCreated: false
       },
       {
         id: 3,
@@ -50,6 +58,9 @@ export class RoutineService {
           { id: 17, name: 'Shrugs', sets: 3, reps: 20, weight: 50 },
           { id: 21, name: 'Tricep Pushdown', sets: 3, reps: 20, weight: 20 },
         ],
+        category: 'Push',
+        type: 'Resistencia',
+        isUserCreated: false
       },
 
       // Rutina de Pull Day
@@ -65,6 +76,9 @@ export class RoutineService {
           { id: 19, name: 'Hammer Curls', sets: 4, reps: 5, weight: 25 },
           { id: 22, name: 'Skull Crushers', sets: 3, reps: 8, weight: 40 },
         ],
+        category: 'Pull',
+        type: 'Fuerza',
+        isUserCreated: false
       },
       {
         id: 5,
@@ -78,6 +92,9 @@ export class RoutineService {
           { id: 19, name: 'Hammer Curls', sets: 3, reps: 12, weight: 15 },
           { id: 18, name: 'Bicep Curls', sets: 3, reps: 12, weight: 15 },
         ],
+        category: 'Pull',
+        type: 'Hipertrofia',
+        isUserCreated: false
       },
       {
         id: 6,
@@ -91,6 +108,9 @@ export class RoutineService {
           { id: 18, name: 'Bicep Curls', sets: 3, reps: 20, weight: 10 },
           { id: 24, name: 'Russian Twists', sets: 3, reps: 20, weight: 10 },
         ],
+        category: 'Pull',
+        type: 'Resistencia',
+        isUserCreated: false
       },
 
       // Rutina de Legs Day
@@ -106,6 +126,9 @@ export class RoutineService {
           { id: 10, name: 'Lunges', sets: 3, reps: 8, weight: 30 },
           { id: 12, name: 'Leg Extensions', sets: 3, reps: 10, weight: 60 },
         ],
+        category: 'Legs',
+        type: 'Fuerza',
+        isUserCreated: false
       },
       {
         id: 8,
@@ -119,6 +142,9 @@ export class RoutineService {
           { id: 12, name: 'Leg Extensions', sets: 3, reps: 15, weight: 45 },
           { id: 13, name: 'Calf Raises', sets: 4, reps: 15, weight: 25 },
         ],
+        category: 'Legs',
+        type: 'Hipertrofia',
+        isUserCreated: false
       },
       {
         id: 9,
@@ -132,24 +158,21 @@ export class RoutineService {
           { id: 11, name: 'Leg Curls', sets: 3, reps: 20, weight: 30 },
           { id: 13, name: 'Calf Raises', sets: 4, reps: 20, weight: 20 },
         ],
+        category: 'Legs',
+        type: 'Resistencia',
+        isUserCreated: false
       },
     ];
   }
-
   getRoutines(): Routine[] {
     return this.routines;
   }
 
   getRoutineById(id: number): Routine | undefined {
-    const routine = this.routines.find(routine => routine.id === id);
-    if (!routine) {
-      console.error(`Routine with ID ${id} not found.`);
-    }
-    return routine;
+    return this.routines.find(routine => routine.id === id);
   }
 
   addRoutine(routine: Routine): void {
-    // Asigna un ID único a la nueva rutina
     routine.id = this.routines.length ? this.routines[this.routines.length - 1].id + 1 : 1;
     this.routines.push(routine);
   }
@@ -158,16 +181,19 @@ export class RoutineService {
     const index = this.routines.findIndex(r => r.id === routine.id);
     if (index !== -1) {
       this.routines[index] = routine;
-    } else {
-      console.error(`Routine with ID ${routine.id} not found for update.`);
     }
   }
 
   deleteRoutine(id: number): void {
-    const initialLength = this.routines.length;
     this.routines = this.routines.filter(routine => routine.id !== id);
-    if (this.routines.length === initialLength) {
-      console.error(`Routine with ID ${id} not found for deletion.`);
-    }
+  }
+
+  getCategories(): Observable<string[]> {
+    return of(this.categories); // devuelves un observable de categorías
+  }
+
+  getRoutinesByCategory(category: string): Routine[] {
+    return this.routines.filter(routine => routine.category === category);
   }
 }
+

@@ -8,6 +8,15 @@
 </ion-header>
 
 <ion-content>
+  <ion-segment [(ngModel)]="selectedCategory" (ionChange)="filterByCategory($event)">
+    <ion-segment-button value="">
+      <ion-label>Todos</ion-label>
+    </ion-segment-button>
+    <ion-segment-button *ngFor="let category of categories" [value]="category">
+      <ion-label>{{ category }}</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
   <ion-list>
     <ion-item *ngFor="let routine of routines" (click)="viewRoutineDetails(routine.id)">
       <ion-label>
