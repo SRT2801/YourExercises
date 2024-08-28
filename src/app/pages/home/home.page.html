@@ -1,16 +1,14 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Exercises</ion-title>
+    <ion-title>Home</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let exercise of exercises">
-      <ion-label>
-        <h2>{{ exercise.name }}</h2>
-        <p>Sets: {{ exercise.sets }}, Reps: {{ exercise.reps }}, Weight: {{ exercise.weight }} kg</p>
-      </ion-label>
+    <ion-item *ngFor="let routine of routines">
+      <ion-label>{{ routine.name }}</ion-label>
+      <ion-button (click)="viewRoutineDetails(routine.id)" fill="outline">View Details</ion-button>
     </ion-item>
   </ion-list>
 </ion-content>

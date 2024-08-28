@@ -7,3 +7,5 @@ export interface Routine {
   duration: number; // Duración en minutos
   exercises: Exercise[];
 }
+export { Exercise };
+

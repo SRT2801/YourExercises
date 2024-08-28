@@ -1,13 +1,26 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>routine-details</ion-title>
+    <ion-title>Routine Details</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">routine-details</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <div *ngIf="routine">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>{{ routine.name }}</ion-card-title>
+        <ion-card-subtitle>{{ routine.description }}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-item *ngFor="let exercise of routine.exercises">
+            <ion-label>
+              <h2>{{ exercise.name }}</h2>
+              <p>Sets: {{ exercise.sets }}, Reps: {{ exercise.reps }}, Weight: {{ exercise.weight }} kg</p>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>
