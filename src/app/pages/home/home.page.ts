@@ -9,9 +9,6 @@ import { Routine } from '../../models/routine';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage implements OnInit {
-goToDetails(arg0: number) {
-throw new Error('Method not implemented.');
-}
   routines: Routine[] = [];
 
   constructor(

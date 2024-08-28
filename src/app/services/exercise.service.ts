@@ -1,4 +1,3 @@
-// exercise.service.ts
 import { Injectable } from '@angular/core';
 import { Exercise } from '../models/exercise';
 

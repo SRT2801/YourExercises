@@ -18,6 +18,32 @@
       <ion-label position="floating">Duración (minutos)</ion-label>
       <ion-input type="number" formControlName="duration"></ion-input>
     </ion-item>
+
+    <ion-list>
+      <ion-item *ngFor="let exercise of exercises; let i = index">
+        <ion-checkbox
+          [checked]="isExerciseSelected(exercise.id)"
+          (ionChange)="onExerciseChange(exercise.id, $event.detail.checked)">
+        </ion-checkbox>
+        <ion-label>{{ exercise.name }}</ion-label>
+
+        <div *ngIf="isExerciseSelected(exercise.id)">
+          <ion-item>
+            <ion-label position="floating">Sets</ion-label>
+            <ion-input type="number" [formControlName]="'sets_' + exercise.id"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Reps</ion-label>
+            <ion-input type="number" [formControlName]="'reps_' + exercise.id"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Peso (kg)</ion-label>
+            <ion-input type="number" [formControlName]="'weight_' + exercise.id"></ion-input>
+          </ion-item>
+        </div>
+      </ion-item>
+    </ion-list>
+
     <ion-button expand="full" type="submit">Guardar</ion-button>
   </form>
 </ion-content>

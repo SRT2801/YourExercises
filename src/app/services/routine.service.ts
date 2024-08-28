@@ -149,11 +149,9 @@ export class RoutineService {
   }
 
   addRoutine(routine: Routine): void {
-    if (!this.routines.find(r => r.id === routine.id)) {
-      this.routines.push(routine);
-    } else {
-      console.error(`Routine with ID ${routine.id} already exists.`);
-    }
+    // Asigna un ID único a la nueva rutina
+    routine.id = this.routines.length ? this.routines[this.routines.length - 1].id + 1 : 1;
+    this.routines.push(routine);
   }
 
   updateRoutine(routine: Routine): void {
