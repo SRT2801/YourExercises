@@ -1,11 +1,9 @@
-import { Exercise } from "./exercise";
+import { Exercise } from './exercise';
 
 export interface Routine {
   id: number;
   name: string;
   description: string;
-  duration: number; // Duración en minutos
+  duration: number;
   exercises: Exercise[];
 }
-export { Exercise };
-

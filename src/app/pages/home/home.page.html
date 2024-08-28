@@ -1,14 +1,19 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Home</ion-title>
+    <ion-title>Rutinas</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="navigateToAddRoutine()">Agregar Rutina</ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let routine of routines">
-      <ion-label>{{ routine.name }}</ion-label>
-      <ion-button (click)="viewRoutineDetails(routine.id)" fill="outline">View Details</ion-button>
+    <ion-item *ngFor="let routine of routines" (click)="viewRoutineDetails(routine.id)">
+      <ion-label>
+        <h2>{{ routine.name }}</h2>
+        <p>{{ routine.description }}</p>
+      </ion-label>
     </ion-item>
   </ion-list>
 </ion-content>

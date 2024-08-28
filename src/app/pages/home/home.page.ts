@@ -9,6 +9,9 @@ import { Routine } from '../../models/routine';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage implements OnInit {
+goToDetails(arg0: number) {
+throw new Error('Method not implemented.');
+}
   routines: Routine[] = [];
 
   constructor(
@@ -17,18 +20,18 @@ export class HomePage implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.loadRoutines();
+    this.routines = this.routineService.getRoutines();
   }
 
   ionViewWillEnter() {
-    this.loadRoutines();
-  }
-
-  loadRoutines() {
     this.routines = this.routineService.getRoutines();
   }
 
   viewRoutineDetails(routineId: number) {
     this.router.navigate(['/routine-details', routineId]);
+  }
+
+  navigateToAddRoutine() {
+    this.router.navigate(['/add-routine']);
   }
 }

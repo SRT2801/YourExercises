@@ -12,7 +12,7 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'routine-details/:id', // Cambiado para aceptar un parámetro de ID
+    path: 'routine-details/:id',
     loadChildren: () => import('./pages/routine-details/routine-details.module').then(m => m.RoutineDetailsPageModule)
   },
   {
@@ -39,4 +39,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -141,21 +141,35 @@ export class RoutineService {
   }
 
   getRoutineById(id: number): Routine | undefined {
-    return this.routines.find(routine => routine.id === id);
+    const routine = this.routines.find(routine => routine.id === id);
+    if (!routine) {
+      console.error(`Routine with ID ${id} not found.`);
+    }
+    return routine;
   }
 
   addRoutine(routine: Routine): void {
-    this.routines.push(routine);
+    if (!this.routines.find(r => r.id === routine.id)) {
+      this.routines.push(routine);
+    } else {
+      console.error(`Routine with ID ${routine.id} already exists.`);
+    }
   }
 
   updateRoutine(routine: Routine): void {
     const index = this.routines.findIndex(r => r.id === routine.id);
     if (index !== -1) {
       this.routines[index] = routine;
+    } else {
+      console.error(`Routine with ID ${routine.id} not found for update.`);
     }
   }
 
   deleteRoutine(id: number): void {
+    const initialLength = this.routines.length;
     this.routines = this.routines.filter(routine => routine.id !== id);
+    if (this.routines.length === initialLength) {
+      console.error(`Routine with ID ${id} not found for deletion.`);
+    }
   }
 }
