@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { RoutineService } from '../../services/routine.service';
 import { ExerciseService } from '../../services/exercise.service';
+import { Exercise } from '../../models/exercise';
 
 @Component({
   selector: 'app-add-routine',
@@ -11,7 +12,7 @@ import { ExerciseService } from '../../services/exercise.service';
 })
 export class AddRoutinePage implements OnInit {
   routineForm: FormGroup;
-  exercises: { id: number; name: string }[] = [];
+  exercises: Exercise[] = []; // Cambiado a Exercise[]
 
   constructor(
     private fb: FormBuilder,
@@ -28,8 +29,10 @@ export class AddRoutinePage implements OnInit {
   }
 
   ngOnInit() {
-    this.exercises = this.exerciseService.getExercises();
-    this.initializeFormControls();
+    this.exerciseService.getAllExercises().subscribe(exercises => {
+      this.exercises = exercises;
+      this.initializeFormControls();
+    });
   }
 
   initializeFormControls() {

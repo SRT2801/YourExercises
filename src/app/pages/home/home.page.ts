@@ -39,9 +39,24 @@ export class HomePage implements OnInit {
   }
 
   loadRoutines() {
-    this.routines = this.selectedCategory
-      ? this.routineService.getRoutinesByCategory(this.selectedCategory)
-      : this.routineService.getRoutines();
+    if (this.selectedCategory && this.selectedCategory !== 'all') {
+      this.routineService.getRoutinesByCategory(this.selectedCategory).subscribe(routines => {
+        this.routines = routines;
+        console.log('Rutinas filtradas:', this.routines);
+      });
+    } else {
+      this.routineService.getRoutines().subscribe(routines => {
+        this.routines = routines;
+        console.log('Todas las rutinas:', this.routines);
+      });
+    }
+  }
+
+
+  filterByCategory(event: any) {
+    this.selectedCategory = event.detail.value;
+    console.log('Categoría seleccionada:', this.selectedCategory);
+    this.loadRoutines();
   }
 
   viewRoutineDetails(routineId: number) {
@@ -50,16 +65,5 @@ export class HomePage implements OnInit {
 
   navigateToAddRoutine() {
     this.router.navigate(['/add-routine']);
-  }
-
-  filterByCategory(event: any) {
-    const value = event.detail.value as string;
-    this.selectedCategory = value || ''; // Proporciona un valor predeterminado
-    this.loadRoutines(); // Llama a loadRoutines para aplicar el filtro
-  }
-
-  showAllRoutines() {
-    this.selectedCategory = '';
-    this.loadRoutines();
   }
 }

@@ -2,20 +2,22 @@
   <ion-toolbar>
     <ion-title>Rutinas</ion-title>
     <ion-buttons slot="end">
-      <ion-button (click)="navigateToAddRoutine()">Agregar Rutina</ion-button>
+      <ion-button (click)="navigateToAddRoutine()">AGREGAR RUTINA</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-segment [(ngModel)]="selectedCategory" (ionChange)="filterByCategory($event)">
-    <ion-segment-button value="">
-      <ion-label>Todos</ion-label>
-    </ion-segment-button>
-    <ion-segment-button *ngFor="let category of categories" [value]="category">
-      <ion-label>{{ category }}</ion-label>
-    </ion-segment-button>
-  </ion-segment>
+  <div class="segment-container">
+    <ion-segment (ionChange)="filterByCategory($event)" [value]="selectedCategory">
+      <ion-segment-button value="all">
+        <ion-label>TODOS</ion-label>
+      </ion-segment-button>
+      <ion-segment-button *ngFor="let category of categories" [value]="category">
+        <ion-label>{{ category | uppercase }}</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
 
   <ion-list>
     <ion-item *ngFor="let routine of routines" (click)="viewRoutineDetails(routine.id)">
