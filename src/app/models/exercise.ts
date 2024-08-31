@@ -4,5 +4,7 @@ export interface Exercise {
   sets: number;
   reps: number;
   weight: number;
-  category: string; // Añade esta línea
+  category: string;
+  videoUrl: string;
+  descanso: string;
 }

@@ -2,20 +2,25 @@
   overflow-x: auto;
   white-space: nowrap;
   -webkit-overflow-scrolling: touch;
-  scrollbar-width: none; /* Para Firefox */
-  -ms-overflow-style: none; /* Para Internet Explorer y Edge */
   &::-webkit-scrollbar {
-    display: none; /* Para Chrome, Safari y Opera */
+    display: none;
   }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 ion-segment {
-  display: inline-flex;
-  min-width: 100%;
+  display: flex;
+  min-width: max-content;
 }
 
 ion-segment-button {
   min-width: auto;
+  --padding-start: 16px;
+  --padding-end: 16px;
+}
+
+ion-content {
   --padding-start: 16px;
   --padding-end: 16px;
 }

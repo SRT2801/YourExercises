@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { RoutineService } from '../../services/routine.service';
 import { ExerciseService } from '../../services/exercise.service';
 import { Exercise } from '../../models/exercise';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-add-routine',
@@ -18,7 +19,8 @@ export class AddRoutinePage implements OnInit {
     private fb: FormBuilder,
     private routineService: RoutineService,
     private exerciseService: ExerciseService,
-    private router: Router
+    private router: Router,
+    private toastController: ToastController
   ) {
     this.routineForm = this.fb.group({
       name: ['', Validators.required],
@@ -57,7 +59,8 @@ export class AddRoutinePage implements OnInit {
 
         return {
           id: exerciseId,
-          name: exercise?.name,  // Incluye el nombre del ejercicio
+          name: exercise?.name,
+          videoUrl: exercise?.videoUrl,
           sets: this.routineForm.get('sets_' + exerciseId)?.value,
           reps: this.routineForm.get('reps_' + exerciseId)?.value,
           weight: this.routineForm.get('weight_' + exerciseId)?.value,
@@ -66,7 +69,21 @@ export class AddRoutinePage implements OnInit {
 
       this.routineService.addRoutine(routine);
       this.router.navigate(['/home']);
+      this.presentToast('Rutina agregada con éxito');
+    } else {
+      this.presentToast('Falta llenar algún campo requerido');
     }
+  }
+
+  async presentToast(message: string) {
+    const toast = await this.toastController.create({
+      message,
+      duration: 2000,
+      position: 'top',
+      cssClass: 'toast-custom',
+      animated: true
+    });
+    toast.present();
   }
 
   onExerciseChange(exerciseId: number, isChecked: boolean) {

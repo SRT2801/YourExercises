@@ -21,29 +21,48 @@ export class RoutineService {
         duration: 60,
         exercises: [
           {
-            id: 1, name: 'Bench Press', sets: 4, reps: 5, weight: 80,
-            category: ''
+            id: 1, name: 'Press de Banca', sets: 4, reps: 10, weight: 0,  descanso: '2-3 mins',
+            category: '',
+            videoUrl: 'assets/images/benchPress.mp4'
+
           },
           {
-            id: 2, name: 'Incline Bench Press', sets: 4, reps: 5, weight: 70,
-            category: ''
+            id: 2, name: 'Press De Banca Inclinado ( Con Mancuernas)', sets: 4, reps: 10, weight: 0,
+            category: '',
+            videoUrl: 'assets/images/press de banca inclinado con mancuernas.mp4',
+            descanso: '2-3 mins'
           },
           {
-            id: 14, name: 'Overhead Press', sets: 4, reps: 5, weight: 50,
-            category: ''
+            id: 3, name: 'Press Militar (Con Mancuernas)', sets: 4, reps: 10, weight: 0,
+            category: '',
+            videoUrl: 'assets/images/press-militar-con-mancuernas.mp4',
+            descanso: '2-3 mins'
           },
           {
-            id: 17, name: 'Shrugs', sets: 3, reps: 8, weight: 80,
-            category: ''
+            id: 4, name: 'Elevaciones Laterales (Con Mancuernas)', sets: 3, reps: 10, weight: 0,
+            category: '',
+            videoUrl: 'assets/images/elevaciones-laterales.mp4',
+            descanso: '2-3 mins'
           },
           {
-            id: 21, name: 'Tricep Pushdown', sets: 3, reps: 10, weight: 35,
-            category: ''
+            id: 5, name: 'Extensiones de tríceps con agarre en V en polea', sets: 3, reps: 10, weight: 0,
+            category: '',
+            videoUrl: 'assets/images/02411205-Cable-Triceps-Pushdown-V-bar-attachment_Upper-Ar.mp4',
+            descanso: '2-3 mins'
+          },
+
+          {
+            id: 6, name: 'Extensión de tríceps sobre la cabeza con polea ', sets: 3, reps: 10, weight: 0,
+            category: '',
+            videoUrl: 'assets/images/01941205-Cable-Overhead-Triceps-Extension-rope-attachment.mp4',
+            descanso: '2-3 mins'
           },
         ],
         category: 'Push',
         type: 'Fuerza',
-        isUserCreated: false
+        isUserCreated: false,
+        videoUrl: '',
+        descanso: '2-3 mins'
       },
       {
         id: 2,
@@ -52,29 +71,65 @@ export class RoutineService {
         duration: 60,
         exercises: [
           {
-            id: 1, name: 'Bench Press', sets: 4, reps: 10, weight: 60,
-            category: ''
+            id: 1, name: 'Press de Banca', sets: 4, reps: 10, weight: 0,  descanso: '2-3 mins',
+            category: '',
+            videoUrl: 'assets/images/benchPress.mp4'
           },
           {
-            id: 2, name: 'Incline Bench Press', sets: 4, reps: 10, weight: 55,
-            category: ''
+            id: 2, name: 'Press De Banca Inclinado ( Con Barra)', sets: 4, reps: 10, weight: 0,
+            category: '',
+            videoUrl: 'assets/images/press de banca inclinado con barra.mp4',
+            descanso: '2-3 mins'
           },
           {
-            id: 3, name: 'Chest Fly', sets: 3, reps: 12, weight: 15,
-            category: ''
+            id: 3, name: 'Aperturas En Maquina', sets: 3, reps: 12, weight: 15,
+            category: '',
+            videoUrl: 'assets/images/aperturas en maquina.mp4',
+            descanso: '2-3 mins'
           },
           {
-            id: 15, name: 'Lateral Raises', sets: 3, reps: 15, weight: 10,
-            category: ''
+            id: 7, name: 'Press Militar (Con Mancuernas)', sets: 4, reps: 10, weight: 0,
+            category: '',
+            videoUrl: 'assets/images/press-militar-con-mancuernas.mp4',
+            descanso: '2-3 mins'
           },
           {
-            id: 20, name: 'Tricep Dips', sets: 3, reps: 12, weight: 0,
-            category: ''
+            id: 4, name: 'Elevaciones Laterales (Con Mancuernas)', sets: 3, reps: 10, weight: 0,
+            category: '',
+            videoUrl: 'assets/images/elevaciones-laterales.mp4',
+            descanso: '2-3 mins'
+          },
+
+          {
+            id: 7, name: 'Elevaciones Frontales', sets: 3, reps: 12, weight: 0,
+            category: '',
+            videoUrl: 'assets/images/elevaciones frontales.mp4',
+            descanso: '2-3 mins'
+          },
+          {
+            id: 8, name: 'Fondos En Banco Plano', sets: 3, reps: 12, weight: 0,
+            category: '',
+            videoUrl: 'assets/images/Fondos en banco plano.mp4',
+            descanso: '2-3 mins'
+          },
+          {
+            id: 5, name: 'Extensiones de tríceps con agarre en V en polea', sets: 3, reps: 10, weight: 0,
+            category: '',
+            videoUrl: 'assets/images/02411205-Cable-Triceps-Pushdown-V-bar-attachment_Upper-Ar.mp4',
+            descanso: '2-3 mins'
+          },
+          {
+            id: 9, name: 'Patada De Tríceps (Con Mancuernas)', sets: 3, reps: 10, weight: 0,
+            category: '',
+            videoUrl: 'assets/images/patada de triceps con mancuernas.mp4',
+            descanso: '2-3 mins'
           },
         ],
         category: 'Push',
         type: 'Hipertrofia',
-        isUserCreated: false
+        isUserCreated: false,
+        videoUrl: '',
+        descanso: ''
       },
       {
         id: 3,
@@ -83,29 +138,66 @@ export class RoutineService {
         duration: 60,
         exercises: [
           {
-            id: 1, name: 'Bench Press', sets: 3, reps: 15, weight: 50,
-            category: ''
+            id: 1, name: 'Press De Banca', sets: 4, reps: 10, weight: 0,
+            category: '',
+            videoUrl: 'assets/images/benchPress.mp4',
+            descanso: '2-3 mins'
           },
           {
-            id: 14, name: 'Overhead Press', sets: 3, reps: 15, weight: 30,
-            category: ''
+            id: 2, name: 'Press De Banca Inclinado ( Con Mancuernas)', sets: 4, reps: 10, weight: 0,
+            category: '',
+            videoUrl: 'assets/images/press de banca inclinado con mancuernas.mp4',
+            descanso: '2-3 mins'
           },
           {
-            id: 15, name: 'Lateral Raises', sets: 3, reps: 20, weight: 5,
-            category: ''
+            id: 10, name: 'Aperturas En banco Plano (Con mancuernas)', sets: 3, reps: 20, weight: 0,
+            category: '',
+            videoUrl: 'assets/images/aperturas con mancuernas en banco.mp4',
+            descanso: '2-3 mins'
           },
           {
-            id: 17, name: 'Shrugs', sets: 3, reps: 20, weight: 50,
-            category: ''
+            id: 7, name: 'Press Militar (Con Mancuernas)', sets: 4, reps: 10, weight: 0,
+            category: '',
+            videoUrl: 'assets/images/press-militar-con-mancuernas.mp4',
+            descanso: '2-3 mins'
           },
           {
-            id: 21, name: 'Tricep Pushdown', sets: 3, reps: 20, weight: 20,
-            category: ''
+            id: 4, name: 'Elevaciones Laterales (Con Mancuernas)', sets: 3, reps: 10, weight: 0,
+            category: '',
+            videoUrl: 'assets/images/elevaciones-laterales.mp4',
+            descanso: '2-3 mins'
           },
+          {
+            id: 7, name: 'Elevaciones Frontales', sets: 3, reps: 12, weight: 0,
+            category: '',
+            videoUrl: 'assets/images/elevaciones frontales.mp4',
+            descanso: '2-3 mins'
+          },
+          {
+            id: 8, name: 'Fondos En Banco Plano', sets: 3, reps: 12, weight: 0,
+            category: '',
+            videoUrl: 'assets/images/Fondos en banco plano.mp4',
+            descanso: '2-3 mins'
+          },
+          {
+            id: 5, name: 'Extensiones de tríceps con agarre en V en polea', sets: 3, reps: 10, weight: 0,
+            category: '',
+            videoUrl: 'assets/images/02411205-Cable-Triceps-Pushdown-V-bar-attachment_Upper-Ar.mp4',
+            descanso: '2-3 mins'
+          },
+          {
+            id: 9, name: 'Patada De Tríceps (Con Mancuernas)', sets: 3, reps: 10, weight: 0,
+            category: '',
+            videoUrl: 'assets/images/patada de triceps con mancuernas.mp4',
+            descanso: '2-3 mins'
+          },
+
         ],
         category: 'Push',
         type: 'Resistencia',
-        isUserCreated: false
+        isUserCreated: false,
+        videoUrl: '',
+        descanso: ''
       },
 
       // Rutina de Pull Day
@@ -116,29 +208,60 @@ export class RoutineService {
         duration: 60,
         exercises: [
           {
-            id: 4, name: 'Deadlift', sets: 4, reps: 5, weight: 100,
-            category: ''
+            id: 11, name: 'Dominadas', sets: 4, reps: 5, weight: 0,
+            category: '',
+            videoUrl: 'assets/images/dominadas.mp4',
+            descanso: '2-3 mins'
           },
           {
-            id: 7, name: 'Bent Over Rows', sets: 4, reps: 5, weight: 70,
-            category: ''
+            id: 12, name: 'Jalón Al Pecho', sets: 4, reps: 5, weight: 0,
+            category: '',
+            videoUrl: 'assets/images/jalon al pech.mp4',
+            descanso: '2-3 mins'
           },
           {
-            id: 5, name: 'Pull Ups', sets: 4, reps: 8, weight: 0,
-            category: ''
+            id: 13, name: 'Remo Con Barra Z (Dorsales)', sets: 4, reps: 5, weight: 0,
+            category: '',
+            videoUrl: 'assets/images/remo con barra z supino.mp4',
+            descanso: '2-3 mins'
           },
           {
-            id: 19, name: 'Hammer Curls', sets: 4, reps: 5, weight: 25,
-            category: ''
+            id: 14, name: 'Remo En Banco Inclinado Con Mancuernas (Agarre Neutro)', sets: 4, reps: 8, weight: 0,
+            category: '',
+            videoUrl: 'assets/images/remo en banco inclinado con mancuernas.mp4',
+            descanso: '2-3 mins'
           },
           {
-            id: 22, name: 'Skull Crushers', sets: 3, reps: 8, weight: 40,
-            category: ''
+            id: 15, name: 'Remo Con Mancuerna (Unilateral)', sets: 4, reps: 5, weight: 0,
+            category: '',
+            videoUrl: 'assets/images/remo con mancuernas unilateral.mp4',
+            descanso: '2-3 mins'
           },
+          {
+            id: 16, name: 'Curl De Biceps ( Con Barra Z )', sets: 3, reps: 8, weight: 0,
+            category: '',
+            videoUrl: 'assets/images/curl de biceps con barra z .mp4',
+            descanso: '2-3 mins'
+          },
+          {
+            id: 17, name: 'Curl De Martillo ( Con Mancuernas )', sets: 3, reps: 8, weight: 0,
+            category: '',
+            videoUrl: 'assets/images/curl martillo.mp4',
+            descanso: '2-3 mins'
+          },
+          {
+            id: 18, name: 'Curl De Biceps Inclinado ( Con Mancuernas)', sets: 3, reps: 8, weight: 0,
+            category: '',
+            videoUrl: 'assets/images/curl de biceps inclinado con mancuernas.mp4',
+            descanso: '2-3 mins'
+          },
+
         ],
         category: 'Pull',
         type: 'Fuerza',
-        isUserCreated: false
+        isUserCreated: false,
+        videoUrl: 'assets/images/',
+        descanso: ''
       },
       {
         id: 5,
@@ -148,28 +271,40 @@ export class RoutineService {
         exercises: [
           {
             id: 4, name: 'Deadlift', sets: 4, reps: 8, weight: 80,
-            category: ''
+            category: '',
+            videoUrl: 'assets/images/',
+            descanso: ''
           },
           {
             id: 6, name: 'Lat Pulldown', sets: 4, reps: 10, weight: 50,
-            category: ''
+            category: '',
+            videoUrl: 'assets/images/',
+            descanso: ''
           },
           {
             id: 7, name: 'Bent Over Rows', sets: 4, reps: 8, weight: 60,
-            category: ''
+            category: '',
+            videoUrl: 'assets/images/',
+            descanso: ''
           },
           {
             id: 19, name: 'Hammer Curls', sets: 3, reps: 12, weight: 15,
-            category: ''
+            category: '',
+            videoUrl: 'assets/images/',
+            descanso: ''
           },
           {
             id: 18, name: 'Bicep Curls', sets: 3, reps: 12, weight: 15,
-            category: ''
+            category: '',
+            videoUrl: 'assets/images/',
+            descanso: ''
           },
         ],
         category: 'Pull',
         type: 'Hipertrofia',
-        isUserCreated: false
+        isUserCreated: false,
+        videoUrl: '',
+        descanso: ''
       },
       {
         id: 6,
@@ -179,28 +314,40 @@ export class RoutineService {
         exercises: [
           {
             id: 5, name: 'Pull Ups', sets: 3, reps: 15, weight: 0,
-            category: ''
+            category: '',
+            videoUrl: 'assets/images/',
+            descanso: ''
           },
           {
             id: 7, name: 'Bent Over Rows', sets: 3, reps: 15, weight: 40,
-            category: ''
+            category: '',
+            videoUrl: 'assets/images/',
+            descanso: ''
           },
           {
             id: 6, name: 'Lat Pulldown', sets: 3, reps: 20, weight: 30,
-            category: ''
+            category: '',
+            videoUrl: 'assets/images/',
+            descanso: ''
           },
           {
             id: 18, name: 'Bicep Curls', sets: 3, reps: 20, weight: 10,
-            category: ''
+            category: '',
+            videoUrl: 'assets/images/',
+            descanso: ''
           },
           {
             id: 24, name: 'Russian Twists', sets: 3, reps: 20, weight: 10,
-            category: ''
+            category: '',
+            videoUrl: 'assets/images/',
+            descanso: ''
           },
         ],
         category: 'Pull',
         type: 'Resistencia',
-        isUserCreated: false
+        isUserCreated: false,
+        videoUrl: '',
+        descanso: ''
       },
 
       // Rutina de Legs Day
@@ -212,28 +359,40 @@ export class RoutineService {
         exercises: [
           {
             id: 8, name: 'Squats', sets: 4, reps: 5, weight: 100,
-            category: ''
+            category: '',
+            videoUrl: 'assets/images/',
+            descanso: ''
           },
           {
             id: 9, name: 'Leg Press', sets: 4, reps: 5, weight: 120,
-            category: ''
+            category: '',
+            videoUrl: 'assets/images/',
+            descanso: ''
           },
           {
             id: 13, name: 'Calf Raises', sets: 4, reps: 8, weight: 40,
-            category: ''
+            category: '',
+            videoUrl: 'assets/images/',
+            descanso: ''
           },
           {
             id: 10, name: 'Lunges', sets: 3, reps: 8, weight: 30,
-            category: ''
+            category: '',
+            videoUrl: 'assets/images/',
+            descanso: ''
           },
           {
             id: 12, name: 'Leg Extensions', sets: 3, reps: 10, weight: 60,
-            category: ''
+            category: '',
+            videoUrl: 'assets/images/',
+            descanso: ''
           },
         ],
         category: 'Legs',
         type: 'Fuerza',
-        isUserCreated: false
+        isUserCreated: false,
+        videoUrl: '',
+        descanso: ''
       },
       {
         id: 8,
@@ -243,28 +402,40 @@ export class RoutineService {
         exercises: [
           {
             id: 8, name: 'Squats', sets: 4, reps: 8, weight: 80,
-            category: ''
+            category: '',
+            videoUrl: 'assets/images/',
+            descanso: ''
           },
           {
             id: 9, name: 'Leg Press', sets: 4, reps: 10, weight: 100,
-            category: ''
+            category: '',
+            videoUrl: 'assets/images/',
+            descanso: ''
           },
           {
             id: 10, name: 'Lunges', sets: 3, reps: 12, weight: 20,
-            category: ''
+            category: '',
+            videoUrl: 'assets/images/',
+            descanso: ''
           },
           {
             id: 12, name: 'Leg Extensions', sets: 3, reps: 15, weight: 45,
-            category: ''
+            category: '',
+            videoUrl: 'assets/images/',
+            descanso: ''
           },
           {
             id: 13, name: 'Calf Raises', sets: 4, reps: 15, weight: 25,
-            category: ''
+            category: '',
+            videoUrl: 'assets/images/',
+            descanso: ''
           },
         ],
         category: 'Legs',
         type: 'Hipertrofia',
-        isUserCreated: false
+        isUserCreated: false,
+        videoUrl: '',
+        descanso: ''
       },
       {
         id: 9,
@@ -274,28 +445,40 @@ export class RoutineService {
         exercises: [
           {
             id: 8, name: 'Squats', sets: 3, reps: 15, weight: 60,
-            category: ''
+            category: '',
+            videoUrl: 'assets/images/',
+            descanso: ''
           },
           {
             id: 9, name: 'Leg Press', sets: 3, reps: 15, weight: 80,
-            category: ''
+            category: '',
+            videoUrl: 'assets/images/',
+            descanso: ''
           },
           {
             id: 10, name: 'Lunges', sets: 3, reps: 20, weight: 15,
-            category: ''
+            category: '',
+            videoUrl: 'assets/images/',
+            descanso: ''
           },
           {
             id: 11, name: 'Leg Curls', sets: 3, reps: 20, weight: 30,
-            category: ''
+            category: '',
+            videoUrl: 'assets/images/',
+            descanso: ''
           },
           {
             id: 13, name: 'Calf Raises', sets: 4, reps: 20, weight: 20,
-            category: ''
+            category: '',
+            videoUrl: 'assets/images/',
+            descanso: ''
           },
         ],
         category: 'Legs',
         type: 'Resistencia',
-        isUserCreated: false
+        isUserCreated: false,
+        videoUrl: '',
+        descanso: ''
       },
     ];
   }

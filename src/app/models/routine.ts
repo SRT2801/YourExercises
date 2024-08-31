@@ -5,8 +5,12 @@ export interface Routine {
   name: string;
   description: string;
   duration: number; // Duration in minutes
+  descanso: string;
   exercises: Exercise[];
   isUserCreated: boolean;
   category?: string;
-  type?: 'Fuerza' | 'Hipertrofia' | 'Resistencia'; 
+  type?: 'Fuerza' | 'Hipertrofia' | 'Resistencia';
+  videoUrl: string;
+
+
 }
