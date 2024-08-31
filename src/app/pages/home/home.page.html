@@ -1,15 +1,17 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Rutinas</ion-title>
+<ion-header class="ion-no-border">
+  <ion-toolbar >
+    <ion-title>Mis Rutinas</ion-title>
     <ion-buttons slot="end">
-      <ion-button (click)="navigateToAddRoutine()">AGREGAR RUTINA</ion-button>
+      <ion-button (click)="navigateToAddRoutine()" fill="clear">
+        <ion-icon name="add-circle-outline" slot="icon-only"></ion-icon>
+      </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">
   <div class="segment-container">
-    <ion-segment (ionChange)="filterByCategory($event)" [value]="selectedCategory">
+    <ion-segment (ionChange)="filterByCategory($event)" [value]="selectedCategory" scrollable>
       <ion-segment-button value="all">
         <ion-label>TODOS</ion-label>
       </ion-segment-button>
@@ -20,11 +22,17 @@
   </div>
 
   <ion-list>
-    <ion-item *ngFor="let routine of routines" (click)="viewRoutineDetails(routine.id)">
+    <ion-item *ngFor="let routine of routines" (click)="viewRoutineDetails(routine.id)" class="routine-item">
+      <ion-thumbnail slot="start">
+        <img [src]="routine.imageUrl " alt="Routine thumbnail">
+      </ion-thumbnail>
       <ion-label>
         <h2>{{ routine.name }}</h2>
         <p>{{ routine.description }}</p>
       </ion-label>
+      <ion-chip color="primary" slot="end">
+        <ion-label>{{ routine.duration }} min</ion-label>
+      </ion-chip>
     </ion-item>
   </ion-list>
 </ion-content>

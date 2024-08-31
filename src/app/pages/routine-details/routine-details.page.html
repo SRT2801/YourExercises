@@ -1,32 +1,43 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Routine Details</ion-title>
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-title>Detalles de Rutina</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <div *ngIf="routine">
+<ion-content class="ion-padding">
+  <div *ngIf="routine" class="routine-container">
     <ion-card>
       <ion-card-header>
         <ion-card-title>{{ routine.name }}</ion-card-title>
-        <ion-card-subtitle>{{ routine.description }} <br>
-          <br>
-          Duración:{{routine.duration}} Mins
-        </ion-card-subtitle>
+        <ion-card-subtitle>{{ routine.description }}</ion-card-subtitle>
       </ion-card-header>
       <ion-card-content>
-        <ion-list>
-          <ion-item *ngFor="let exercise of routine.exercises">
-            <ion-label>
-              <h2>{{ exercise.name }}</h2>
-              <p>Sets: {{ exercise.sets }}, Reps: {{ exercise.reps }}, Weight: {{ exercise.weight }} kg, Rest: {{exercise.descanso}}</p>
-              <video width="100%" height="200" controls>
-                <source src="{{ exercise.videoUrl }}" type="video/mp4">
-              </video>
-            </ion-label>
-          </ion-item>
-        </ion-list>
+        <div class="duration-chip">
+          <ion-icon name="time-outline"></ion-icon>
+          <span>{{ routine.duration }} mins</span>
+        </div>
       </ion-card-content>
     </ion-card>
+
+    <ion-list>
+      <ion-item-group *ngFor="let exercise of routine.exercises" class="exercise-group">
+        <ion-item-divider color="light">
+          <ion-label>{{ exercise.name }}</ion-label>
+        </ion-item-divider>
+        <ion-item lines="none" class="exercise-details">
+          <ion-label>
+            <p><strong>Sets:</strong> {{ exercise.sets }}</p>
+            <p><strong>Reps:</strong> {{ exercise.reps }}</p>
+            <p><strong>Peso:</strong> {{ exercise.weight }} kg</p>
+            <p><strong>Descanso:</strong> {{ exercise.descanso }}</p>
+          </ion-label>
+        </ion-item>
+        <div class="video-container">
+          <video controls>
+            <source [src]="exercise.videoUrl" type="video/mp4">
+          </video>
+        </div>
+      </ion-item-group>
+    </ion-list>
   </div>
 </ion-content>

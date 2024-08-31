@@ -13,7 +13,7 @@ import { ToastController } from '@ionic/angular';
 })
 export class AddRoutinePage implements OnInit {
   routineForm: FormGroup;
-  exercises: Exercise[] = []; // Cambiado a Exercise[]
+  exercises: Exercise[] = [];
 
   constructor(
     private fb: FormBuilder,
@@ -98,5 +98,18 @@ export class AddRoutinePage implements OnInit {
 
   isExerciseSelected(exerciseId: number): boolean {
     return this.exercisesFormArray.controls.some(control => control.value === exerciseId);
+  }
+
+  playPause(video: HTMLVideoElement) {
+    if (video.paused) {
+      video.play();
+    } else {
+      video.pause();
+    }
+  }
+
+  restart(video: HTMLVideoElement) {
+    video.currentTime = 0;
+    video.play();
   }
 }

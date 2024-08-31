@@ -8,16 +8,15 @@ import { Observable, of } from 'rxjs';
 export class ExerciseService {
   private exercises: Exercise[] = [
     {
-      id: 1, name: 'Bench Press', sets: 0, reps: 0, weight: 0,
+      id: 1, name: 'Press de Banca', sets: 4, reps: 10, weight: 0,  descanso: '',
       category: '',
-      videoUrl: 'assets/images/benchPress.mp4',
-      descanso: '2-1 min'
+      videoUrl: 'assets/images/benchPress.mp4'
     },
     {
-      id: 2, name: 'Incline Bench Press', sets: 0, reps: 0, weight: 0,
+      id: 2, name: 'Press De Banca Inclinado', sets: 4, reps: 10, weight: 0,
       category: '',
-      videoUrl: '',
-      descanso: ''
+      videoUrl: 'assets/images/press de banca inclinado con barra.mp4',
+      descanso: '2-3 mins'
     },
     {
       id: 3, name: 'Chest Fly', sets: 0, reps: 0, weight: 0,

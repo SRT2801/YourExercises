@@ -11,6 +11,7 @@ export interface Routine {
   category?: string;
   type?: 'Fuerza' | 'Hipertrofia' | 'Resistencia';
   videoUrl: string;
+  imageUrl: string;
 
 
 }

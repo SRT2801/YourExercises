@@ -1,19 +1,98 @@
-ion-item video {
-  background-color: #f7f7f7;
-  padding: 10px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+ion-header {
+  ion-toolbar {
+    --background: var(--ion-color-primary);
+    --color: var(--ion-color-primary-contrast);
+  }
 }
 
-ion-item h2 {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 10px;
+ion-content {
+  --background: var(--ion-color-light);
+}
+
+ion-card {
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+ion-item {
+  --padding-start: 0;
+  --inner-padding-end: 0;
+}
+
+.exercise-item {
+  margin-bottom: 15px;
+
+  h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+}
+
+.exercise-details {
+  margin-top: 10px;
+  padding-left: 16px;
+
+  ion-item {
+    --padding-start: 0;
+  }
+}
+
+.video-container {
+  margin-top: 15px;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: var(--ion-color-light);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0;
+  overflow: hidden;
+
+  video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.video-controls {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.05);
+
+  ion-button {
+    --padding-start: 10px;
+    --padding-end: 10px;
+
+    ion-icon {
+      font-size: 24px;
+    }
+  }
+}
+
+ion-button[type="submit"] {
+  margin-top: 20px;
 }
 
 .toast-custom {
-  .toast-custom {
-    animation: slide-in 0.5s;
+  .toast-wrapper {
+    background: var(--ion-color-success);
+    border-radius: 15px;
+  }
+
+  .toast-message {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--ion-color-success-contrast);
   }
 
   @keyframes slide-in {
@@ -24,9 +103,6 @@ ion-item h2 {
       transform: translateY(0);
     }
   }
-}
 
-.toast-custom .toast-message {
-  font-size: 16px;
-  font-weight: bold;
+  animation: slide-in 0.5s;
 }

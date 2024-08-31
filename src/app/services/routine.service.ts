@@ -21,10 +21,9 @@ export class RoutineService {
         duration: 60,
         exercises: [
           {
-            id: 1, name: 'Press de Banca', sets: 4, reps: 10, weight: 0,  descanso: '2-3 mins',
+            id: 1, name: 'Press de Banca', sets: 4, reps: 10, weight: 0, descanso: '2-3 mins',
             category: '',
             videoUrl: 'assets/images/benchPress.mp4'
-
           },
           {
             id: 2, name: 'Press De Banca Inclinado ( Con Mancuernas)', sets: 4, reps: 10, weight: 0,
@@ -62,7 +61,8 @@ export class RoutineService {
         type: 'Fuerza',
         isUserCreated: false,
         videoUrl: '',
-        descanso: '2-3 mins'
+        descanso: '2-3 mins',
+        imageUrl: 'assets/images/GettyImages-615883422.webp'
       },
       {
         id: 2,
@@ -71,7 +71,7 @@ export class RoutineService {
         duration: 60,
         exercises: [
           {
-            id: 1, name: 'Press de Banca', sets: 4, reps: 10, weight: 0,  descanso: '2-3 mins',
+            id: 1, name: 'Press de Banca', sets: 4, reps: 10, weight: 0, descanso: '2-3 mins',
             category: '',
             videoUrl: 'assets/images/benchPress.mp4'
           },
@@ -129,7 +129,8 @@ export class RoutineService {
         type: 'Hipertrofia',
         isUserCreated: false,
         videoUrl: '',
-        descanso: ''
+        descanso: '',
+        imageUrl: ''
       },
       {
         id: 3,
@@ -191,13 +192,13 @@ export class RoutineService {
             videoUrl: 'assets/images/patada de triceps con mancuernas.mp4',
             descanso: '2-3 mins'
           },
-
         ],
         category: 'Push',
         type: 'Resistencia',
         isUserCreated: false,
         videoUrl: '',
-        descanso: ''
+        descanso: '',
+        imageUrl: ''
       },
 
       // Rutina de Pull Day
@@ -255,13 +256,13 @@ export class RoutineService {
             videoUrl: 'assets/images/curl de biceps inclinado con mancuernas.mp4',
             descanso: '2-3 mins'
           },
-
         ],
         category: 'Pull',
         type: 'Fuerza',
         isUserCreated: false,
         videoUrl: 'assets/images/',
-        descanso: ''
+        descanso: '',
+        imageUrl: ''
       },
       {
         id: 5,
@@ -304,7 +305,8 @@ export class RoutineService {
         type: 'Hipertrofia',
         isUserCreated: false,
         videoUrl: '',
-        descanso: ''
+        descanso: '',
+        imageUrl: ''
       },
       {
         id: 6,
@@ -347,7 +349,8 @@ export class RoutineService {
         type: 'Resistencia',
         isUserCreated: false,
         videoUrl: '',
-        descanso: ''
+        descanso: '',
+        imageUrl: ''
       },
 
       // Rutina de Legs Day
@@ -392,7 +395,8 @@ export class RoutineService {
         type: 'Fuerza',
         isUserCreated: false,
         videoUrl: '',
-        descanso: ''
+        descanso: '',
+        imageUrl: ''
       },
       {
         id: 8,
@@ -435,7 +439,8 @@ export class RoutineService {
         type: 'Hipertrofia',
         isUserCreated: false,
         videoUrl: '',
-        descanso: ''
+        descanso: '',
+        imageUrl: ''
       },
       {
         id: 9,
@@ -478,7 +483,8 @@ export class RoutineService {
         type: 'Resistencia',
         isUserCreated: false,
         videoUrl: '',
-        descanso: ''
+        descanso: '',
+        imageUrl: ''
       },
     ];
   }
